@@ -1,0 +1,13 @@
+service: notifications
+owner: messaging-team@acme.dev
+tier: tier-2
+language: go
+runtime: k8s
+ports:
+  - 7070
+config:
+  database: mysql-notif
+  queue: rabbitmq
+  feature_flags:
+    - sms.rate_limit_dynamic
+    - push.render_markdown
