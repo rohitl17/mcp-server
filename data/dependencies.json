@@ -1,0 +1,10 @@
+{
+  "payment-service": {
+    "depends_on": ["auth-service", "ledger-service", "notifications"],
+    "dependents": ["checkout", "billing-portal"]
+  },
+  "notifications": {
+    "depends_on": ["template-service", "vendor-gateways"],
+    "dependents": ["payment-service", "marketing-campaigns"]
+  }
+}
