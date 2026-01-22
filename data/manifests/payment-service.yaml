@@ -1,0 +1,14 @@
+service: payment-service
+owner: payments-team@acme.dev
+tier: tier-1
+language: python
+runtime: k8s
+ports:
+  - 8080
+  - 9090
+config:
+  database: postgres-payment
+  cache: redis-payments
+  feature_flags:
+    - psp.failover
+    - risk.batch_hold
